@@ -1,0 +1,11 @@
+$darkyellow: #E8BD0D;
+$lightyellow: #EDC126;
+$textcolor: black;
+
+.navbar {
+    position: sticky;
+    width: 100vw;
+    height: 100px;
+    opacity: 0.5;
+    background-color: $darkyellow;
+}

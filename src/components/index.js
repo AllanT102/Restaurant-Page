@@ -1,13 +1,4 @@
-import Icon from '/src/images/test.jpg'
+import component from "./navbar";
+import '/src/styles/body.scss'
 
-function component() {
-    const content = document.createElement('div');
-    const myIcon = new Image();
-    myIcon.src = Icon;
-    const text = document.createElement('p');
-    text.textContent = "this restaurant is amazing";
-    content.append(myIcon, text);
-    return content;
-}
-
-document.body.appendChild(component());
+document.body.appendChild(component())
