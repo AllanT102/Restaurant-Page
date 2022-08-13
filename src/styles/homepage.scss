@@ -1,0 +1,28 @@
+
+.about-section {
+    display: flex;
+    height: 30vw;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    padding-left: 2%;
+    margin-top: 5%;
+    transform: translateX(400%);
+    transition: transform 2s ease-out;
+    border: solid red 2px;
+}
+
+.about-section.active {
+    transform: translateX(10vw);
+}
+
+.section-icon {
+    height: 100%;
+    max-height: 300px;
+    width: auto;
+}
+
+.section-text {
+    height: auto;
+}
