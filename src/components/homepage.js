@@ -64,14 +64,17 @@ function bestMenuSection() {
 
 function reveal() {
     const children = content.children;
-    console.log(children.length);
-    for (let i = 1; i < children.length; i++) {
+    console.log(children.length)
+    for (let i = 0; i < children.length; i++) {
         let child = children[i];
-        if (child === content.firstChild) continue;
-        let height = child.getBoundingClientRect().top;
-        if (height < 900 && i % 2 === 0) child.classList.add('active-right');
-        else if (height < 900 && i % 2 !== 0) child.classList.add('active-left');
-        else child.classList.remove('active-left');
+
+        let height = child.getBoundingClientRect().bottom;
+        let windowHeight = window.innerHeight;
+        console.log(height)
+
+        if (height > windowHeight + 200 || height < 200) child.classList.contains('left') ? child.classList.remove('active-left') : child.classList.remove('active-right');
+        else if (height > 0 && height < windowHeight && i % 2 === 0) child.classList.add('active-right');
+        else if (height > 0 && height < windowHeight && i % 2 !== 0) child.classList.add('active-left');
     }
 }
 

@@ -16,12 +16,12 @@
     gap: 5%;
     padding-left: 2%;
     margin-top: 2%;
+    transition: transform 0.5s ease-in-out;
+    border: solid red 2px;
 }
 
 .about-section {
     @include section;
-    transition: transform 2s ease-out;
-    border: solid red 2px;
 }
 
 
@@ -37,16 +37,14 @@
 
 .review-section {
     @include section;
-    transition: transform 2s ease-out;
-    border: solid red 2px;
 }
 
 .left {
-    transform: translateX(-400%);
+    transform: translateX(-150%);
 }
 
 .right {
-    transform: translateX(400%);
+    transform: translateX(150%);
 }
 
 .active-right {
