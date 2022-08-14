@@ -1,28 +1,59 @@
 
-.about-section {
+.content {
+    // overflow: hidden;
     display: flex;
-    height: 30vw;
+    flex-direction: column;
+    gap: 10%;
+}
+
+@mixin section {
+    overflow: hidden;
+    display: flex;
+    height: 25em;
     width: 75%;
     justify-content: center;
     align-items: center;
     gap: 5%;
     padding-left: 2%;
-    margin-top: 5%;
-    transform: translateX(400%);
+    margin-top: 2%;
+}
+
+.about-section {
+    @include section;
     transition: transform 2s ease-out;
     border: solid red 2px;
 }
 
-.about-section.active {
-    transform: translateX(10vw);
-}
 
 .section-icon {
-    height: 100%;
+    height: auto;
+    width: 100%;
     max-height: 300px;
-    width: auto;
 }
 
 .section-text {
     height: auto;
 }
+
+.review-section {
+    @include section;
+    transition: transform 2s ease-out;
+    border: solid red 2px;
+}
+
+.left {
+    transform: translateX(-400%);
+}
+
+.right {
+    transform: translateX(400%);
+}
+
+.active-right {
+    transform: translateX(10vw);
+}
+
+.active-left {
+    transform: translateX(15vw);
+}
+
