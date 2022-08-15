@@ -18,6 +18,7 @@ export default function homepage() {
 
 function aboutSection() {
     const section = document.createElement('div');
+    const left = document.createElement('div');
 
     const icon = new Image();
     icon.src = aboutIcon;
@@ -25,28 +26,48 @@ function aboutSection() {
     const text = document.createElement('p');
     text.textContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
+    const title = document.createElement('h1');
+    title.textContent = "FUMETSU RAMEN"
+
     section.classList.add('about-section')
     icon.classList.add('section-icon')
     text.classList.add('section-text')
+    left.classList.add('about-section-left')
     setTimeout(() => {
         section.classList.add('active-right')
     }, 200)
 
-    section.append(text, icon);
+    left.append(title, text);
+    section.append(left, icon);
     return section;
 }
 
 function reviewsSection() {
     const section = document.createElement('div');
+    section.classList.add('review-section');
 
-    const text = document.createElement('p');
-    text.textContent = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-    
-    section.classList.add('review-section')
-    text.classList.add('section-text');
+    const leftArrow = document.createElement('i');
+    const rightArrow = document.createElement('i');
+    leftArrow.classList.add('left-arrow', 'arrow');
+    rightArrow.classList.add('right-arrow', 'arrow');
 
-    section.append(text);
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('card-div')
+    const r1 = "This is review one text";
+    const r2 = "this is review two text";
+    const r3 = "this is review three text";
+    cardDiv.append(reviewCard(r3), reviewCard(r1), reviewCard(2));
+
+    section.append(leftArrow, cardDiv, rightArrow);
     return section;
+}
+
+function reviewCard(p) {
+    const card = document.createElement('div');
+    const text = document.createElement('p');
+    text.textContent = p;
+    card.classList.add('review-card');
+    return card;
 }
 
 function bestMenuSection() {
