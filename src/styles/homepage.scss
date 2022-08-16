@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 10%;
+    user-select: none;
 }
 
 @mixin section {
@@ -14,7 +15,6 @@
     justify-content: center;
     align-items: center;
     gap: 5%;
-    padding-left: 2%;
     margin-top: 2%;
     transition: transform 0.5s ease-in-out;
     background: rgba(238, 201, 55, 0.2);
@@ -24,8 +24,8 @@
 .about-section {
     @include section;
     height: 40em;
+    padding-left: 2%;
 }
-
 
 .section-icon {
     height: auto;
@@ -37,9 +37,6 @@
     height: auto;
 }
 
-.review-section {
-    @include section;
-}
 
 .left {
     transform: translateX(-150%);
@@ -59,7 +56,7 @@
 
 .about-section-left {
     flex-flow: column;
-
+    
     h1 {
         margin-bottom: 3%;
     }
@@ -70,6 +67,7 @@
     border-width: 0 10px 10px 0;
     padding: 6px;
     cursor: pointer;
+    z-index: 100;
 }
 
 .left-arrow {
@@ -82,14 +80,59 @@
     -webkit-transform: rotate(-45deg);
 }
 
-.card-div {
-    display: flex;
-    width: 75%;
-    border: solid red 2px;
+.review-section {
+    @include section;
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        z-index: 2;
+        height: 100%;
+        width: 35%;
+        background-image: linear-gradient(90deg, rgb(220, 210, 168), transparent);
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+        height: 100%;
+        width: 35%;
+        background-image: linear-gradient(-90deg, rgb(220, 210, 168), transparent);
+    }
 }
 
+.card-div {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 5%;
+    overflow: auto;
+    width: 75%;
+    height: 100%;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
 .review-card {
-    width: 35%;
-    height: 15em;
-    border: solid red 2px;
+    min-width: 25em;
+    min-height: 20em;
+    margin: 1px 10px;
+    cursor: pointer;
+    overflow:hidden;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0 0, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.blank-card {
+     min-width: 25em;
+    min-height: 20em;
+    margin: 1px 10px;
 }

@@ -50,23 +50,40 @@ function reviewsSection() {
     const rightArrow = document.createElement('i');
     leftArrow.classList.add('left-arrow', 'arrow');
     rightArrow.classList.add('right-arrow', 'arrow');
-
+    
     const cardDiv = document.createElement('div');
     cardDiv.classList.add('card-div')
     const r1 = "This is review one text";
     const r2 = "this is review two text";
     const r3 = "this is review three text";
-    cardDiv.append(reviewCard(r3), reviewCard(r1), reviewCard(2));
-
+    cardDiv.append(reviewCard(r3), reviewCard(r1), reviewCard(r2), reviewCard(r3), reviewCard(r1), reviewCard(r2), reviewCard(r3), reviewCard(r1), reviewCard(r2),);
+    
     section.append(leftArrow, cardDiv, rightArrow);
+    
+    leftArrow.addEventListener('click', () => {
+        cardDiv.scrollBy(400,0);
+        // cardDiv.prepend(cardDiv.lastChild)
+    });
+    rightArrow.addEventListener('click', () => {
+        cardDiv.scrollBy(-400,0);
+        // cardDiv.append(cardDiv.firstChild);
+    });
     return section;
 }
+
+function blankCard() {
+    const card = document.createElement('div');
+    card.classList.add('blank-card')
+    return card;
+}
+
 
 function reviewCard(p) {
     const card = document.createElement('div');
     const text = document.createElement('p');
     text.textContent = p;
     card.classList.add('review-card');
+    card.append(text);
     return card;
 }
 
@@ -85,13 +102,11 @@ function bestMenuSection() {
 
 function reveal() {
     const children = content.children;
-    console.log(children.length)
     for (let i = 0; i < children.length; i++) {
         let child = children[i];
 
         let height = child.getBoundingClientRect().bottom;
         let windowHeight = window.innerHeight;
-        console.log(height)
 
         if (height > windowHeight + 200 || height < 200) child.classList.contains('left') ? child.classList.remove('active-left') : child.classList.remove('active-right');
         else if (height > 0 && height < windowHeight && i % 2 === 0) child.classList.add('active-right');
@@ -101,5 +116,8 @@ function reveal() {
 
 window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
-
+window.addEventListener('load', () => {
+    const cardDiv = document.querySelector('.card-div')
+    cardDiv.scrollTo(600,0)
+})
 
