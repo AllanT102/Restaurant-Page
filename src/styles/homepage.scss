@@ -128,11 +128,45 @@
     cursor: pointer;
     overflow:hidden;
     border-radius: 5px;
+    background-color:rgba(232, 189, 13, 0.5);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0 0, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.card-text {
+    text-align: center;
+    font-style: italic;
 }
 
 .blank-card {
-     min-width: 25em;
+    min-width: 25em;
     min-height: 20em;
     margin: 1px 10px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;;
+    border: solid black 2px;
+    background-color: white;
+    margin-top: 15%;
+}
+
+.best-menu-section {
+    @include section;
+    overflow:visible;
+    margin-bottom: 5%;
+}
+
+.best-menu-text-div {
+    padding-left: 2%;
+    width: 100%;
+    h1 {
+        margin-bottom: 3%;
+    }
 }
