@@ -12,8 +12,9 @@ $color1: #120E43;
 
 .navbar {
     position: sticky;
-    width: 100vw;
-    height: 6vw;
+    min-width: 100vw;
+    min-height: 60px;
+    height: 100px;
     background-color: $darkyellow;
     display: flex;
     justify-content: space-evenly;
@@ -24,11 +25,12 @@ $color1: #120E43;
 .tab {
     position: relative;
     opacity: 1;
-    width: 5vw;
+    min-width: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.6em;
+    padding: 2px;
 
     &::after,
     &::before {

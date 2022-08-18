@@ -69,11 +69,11 @@ function reviewsSection() {
     section.append(leftArrow, cardDiv, rightArrow);
     
     leftArrow.addEventListener('click', () => {
-        if (cardDiv.scrollLeft < 3800) cardDiv.scrollBy(450,0);
+        if (cardDiv.scrollLeft < 3800) cardDiv.scrollBy(500,0);
         // cardDiv.prepend(cardDiv.lastChild)
     });
     rightArrow.addEventListener('click', () => {
-        if (cardDiv.scrollLeft > 300) cardDiv.scrollBy(-450,0);
+        if (cardDiv.scrollLeft > 300) cardDiv.scrollBy(-500,0);
         // cardDiv.append(cardDiv.firstChild);
     });
     return section;
@@ -108,11 +108,12 @@ function bestMenuSection() {
     text.textContent = "Shoyu is the most popular Tokyo ramen and most likely the ramen you will first come across when visiting a ramen shop. Shoyu means soy sauce and has a clear brown appearance with a deep, rich soy sauce aroma. It's made from chicken bones, beef, pork or seafood is sometimes also used in the broth. The taste is usually a salty and light taste as the broth is clear and the noodles used are usually thin curly noodles. Shoyu ramen is known to be one of the oldest known ramen in Japan which most closely resembles the original Chinese version that first came to Japan. It is our award winning dish.";
     const title = document.createElement('h1');
     title.textContent = "Shoyu Ramen #BestSeller"
-    
-    textDiv.classList.add('best-menu-text-div');
-    section.classList.add('best-menu-section');
-    text.classList.add('menu-text');
-    img.classList.add('ramen-img');
+
+    section.classList.add('menu-section')
+    img.classList.add('section-icon')
+    text.classList.add('section-text')
+    textDiv.classList.add('about-section-left')
+  
     textDiv.append(title, text);
     section.append(textDiv, img);
     return section;
@@ -136,6 +137,6 @@ window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
 window.addEventListener('load', () => {
     const cardDiv = document.querySelector('.card-div')
-    cardDiv.scrollTo(1200,0)
+    cardDiv.scrollTo(1000,0)
 })
 
