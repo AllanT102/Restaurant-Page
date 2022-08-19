@@ -7,7 +7,7 @@ import desert from '/src/images/desert.png';
 function menu() {
     const content = document.createElement('div');
     content.classList.add('menu-content');
-    content.append(createMenuElement(ramen, "hi"), createMenuElement(ramen, "Hi"), createMenuElement(ramen, "Hi"), createMenuElement(ramen, "Hi"));
+    content.append(createMenuElement(ramen, "Shoyu Ramen"), createMenuElement(ramen, "Vegetarian Ramen"), createMenuElement(sushi, "Sushi Assortment"), createMenuElement(omurice, "Omurice"), createMenuElement(desert, "Mango Pudding"), createMenuElement(desert, "Passionfruit Pudding"));
     return content;
 }
 
