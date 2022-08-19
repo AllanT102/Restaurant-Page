@@ -6,7 +6,7 @@ import '/src/styles/homepage.scss';
 
 let content;
 
-export default function homepage() {
+function homepage() {
     content = document.createElement('div');
     content.append(aboutSection(), reviewsSection(), bestMenuSection());
     content.classList.add('content')
@@ -133,10 +133,17 @@ function reveal() {
     }
 }
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
-window.addEventListener('load', () => {
-    const cardDiv = document.querySelector('.card-div')
-    cardDiv.scrollTo(1000,0)
-})
+function initHome() {
+    const main = document.getElementById('main');
+    main.textContent = '';
+    main.append(homepage());
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+    window.addEventListener('load', () => {
+        const cardDiv = document.querySelector('.card-div')
+        cardDiv.scrollTo(1000,0)
+    })
+}
+
+export default initHome;
 

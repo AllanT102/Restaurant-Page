@@ -1,5 +1,3 @@
-import component from "./navbar";
-import homepage from "./homepage";
-import '/src/styles/body.scss'
+import initializeWebsite from "./website";
 
-document.body.append(component(), homepage())
+initializeWebsite();
